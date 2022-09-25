@@ -54,7 +54,4 @@ create table employee_payroll(
   values ('Nayana','898765478','Coxtown','Engineer','F',30000,2000,1000,200,18000,'2022-09-23','Bangalore','India');
   select * from employee_payroll;
   select *from employee_payroll where Name='Terisa';
-  select schema_name(t.schema_id) as schema_name,
-    t.name as table_name,
-    t.create_data,
-    t.modify_data;
+  
