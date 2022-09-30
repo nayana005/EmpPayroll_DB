@@ -54,7 +54,28 @@ create table employee_payroll(
   values ('Nayana','898765478','Coxtown','Engineer','F',30000,2000,1000,200,18000,'2022-09-23','Bangalore','India');
   select * from employee_payroll;
   select *from employee_payroll where Name='Terisa';
-  select schema_name(t.schema_id) as schema_name,
-    t.name as table_name,
-    t.create_data,
-    t.modify_data;
+  create table employee_department(department_id int auto_increment, department_name varchar(20), employee_department_id int,
+primary key(department_id),
+foreign key(employee_department_EmployeeID) references employee_payroll(EmployeeID));
+
+desc employee_department;
+
+insert into employee_department (department_name , employee_department_id) values('account', 1 ), ('testing' , 2);
+select * from employee_department;
+
+select employee_payroll.name, employee_payroll.start_date ,
+ employee_department.department_name from employee_payroll
+ inner join employee_department
+ on employee_payroll.id = employee_department.employee_department_id ;
+
+ select employee_payroll.name, employee_payroll.start_date ,
+ employee_department.department_name from employee_payroll
+ left join employee_department
+ on employee_payroll.id = employee_department.employee_department_id ;
+
+ select employee_payroll.name, employee_payroll.start_date ,
+ employee_department.department_name from employee_payroll
+ cross join employee_department ;
+  drop table employee_payroll;
+  drop table employee_department;
+  
