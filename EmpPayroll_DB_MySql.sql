@@ -76,6 +76,5 @@ select employee_payroll.name, employee_payroll.start_date ,
  select employee_payroll.name, employee_payroll.start_date ,
  employee_department.department_name from employee_payroll
  cross join employee_department ;
-  drop table employee_payroll;
-  drop table employee_department;
+  
   
